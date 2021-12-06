@@ -199,7 +199,7 @@ text-shadow: 0px 4px 4px rgba(0, 0,  0, 0.25)
     height: 350px;
     left: 605px;
     top: 190px;
-    background: url(/tda-proyecto/img/renderescom1.png);
+    background: url(./img/renderescom1.png);
     z-index: 0;
 
 }
@@ -210,7 +210,7 @@ text-shadow: 0px 4px 4px rgba(0, 0,  0, 0.25)
     left: 580px;
     top: 409px;
 
-    background-image: url(/tda-proyecto/img/arbol1.svg);
+    background-image: url(./img/arbol1.svg);
 }
 
 .arbol2{
@@ -220,7 +220,7 @@ text-shadow: 0px 4px 4px rgba(0, 0,  0, 0.25)
     left: 670px;
     top: 427px;
 
-    background-image: url(/tda-proyecto/img/arbol2.svg);
+    background-image: url(./img/arbol2.svg);
 }
 .arbol3{
     position: absolute;
@@ -229,7 +229,7 @@ text-shadow: 0px 4px 4px rgba(0, 0,  0, 0.25)
     left: 640.61px;
     top: 393px;
 
-    background-image: url(/tda-proyecto/img/arbol3.svg);
+    background-image: url(./img/arbol3.svg);
     transform: matrix(-1, 0, 0, 1, 0, 0);
 }
 .piso{
@@ -239,7 +239,7 @@ text-shadow: 0px 4px 4px rgba(0, 0,  0, 0.25)
     left: 605px;
     top: 523px;
 
-    background-image: url(/tda-proyecto/img/piso.png);
+    background-image: url(./img/piso.png);
     z-index: -1;
 }
 .diosito{
@@ -249,7 +249,7 @@ text-shadow: 0px 4px 4px rgba(0, 0,  0, 0.25)
     left: 523px;
     top: 555px;
     
-    background-image: url(/tda-proyecto/img/dioooos.png);
+    background-image: url(./img/dioooos.png);
 }
 
 .nube1{
@@ -260,7 +260,7 @@ text-shadow: 0px 4px 4px rgba(0, 0,  0, 0.25)
     top: 70px;
 
 
-    background-image: url(/tda-proyecto/img/nube1.svg);
+    background-image: url(./img/nube1.svg);
 }
 .nube2{
     position: absolute;
@@ -269,7 +269,7 @@ text-shadow: 0px 4px 4px rgba(0, 0,  0, 0.25)
     left: 1060px;
     top: 100px;
 
-    background-image: url(/tda-proyecto/img/nube2.svg);
+    background-image: url(./img/nube2.svg);
 }
 .icono1{
     position: absolute;
