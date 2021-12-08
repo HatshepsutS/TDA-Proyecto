@@ -4,192 +4,130 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administrador</title>
-    <link rel="stylesheet" href="css/css/bootstrap.min.css"> 
-    <link rel="stylesheet" href="css/estiloprueba.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <title>Encuesta Usuario</title>
+    <link rel="stylesheet" href="./css/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Raleway:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
 </head>
-<style>
-.logoIPN{
-    position: absolute;
-width: 70.22px;
-height: 106.122px;
-left: 31.02px;
-top: 19.59px;
-}
-.logoEscom{
-    position: absolute;
-width: 114.28px;
-height: 111.02px;
-left: 142.04px;
-top: 19.59px;
-
-}
-.Telefono{
-    position: absolute;
-width: 479.99px;
-height: 416.32px;
-left: 1440px;
-top: 80px;
-
-}
-.Fondo{
-position: absolute;
-width: 1421.37px;
-height: 2603.81px;
-left: 482px;
-top: 0px;
-}
-
-.Rectangulo{
-    position: absolute;
-width: 1908px;
-height: 156.73px;
-left: -4.89px;
-top: 176.32px;
-background: #C4C4C4;
-}
-
-.ESCOM{
-position: absolute;
-width: 150px;
-height: 45px;
-left: 1600px;
-top: 19px;
-
-font-family: Raleway;
-font-style: normal;
-font-weight: bold;
-font-size: 65.3px;
-line-height: 124.5%;
-
-text-transform: capitalize;
-
-color:#1E1540;
-}
-
-.Texto1{
-position: absolute;
-width: 1815.50px;
-height: 151.83px;
-left: 68.57px;
-top: 227px;
-
-font-family: Raleway;
-font-style: normal;
-font-weight: bold;
-font-size: 58.77px;
-line-height: 68.57px;
-text-transform: capitalize;
-color: #000000;
-}
-
-.Texto2{
-    position: absolute;
-left: 8.16%;
-right: 66.24%;
-top: 42%;
-bottom: 85.37%;
-
-font-family: Raleway;
-font-style: normal;
-font-weight: bold;
-font-size: 65.3px;
-line-height: 47px;
-text-transform: capitalize;
-
-color: #FFFFFF;
-}
-
-.Cuadro1{
-    position: absolute;
-width: 1782.85px;
-height: 421.22px;
-left: 68.57px;
-top: 463.67px;
-
-background: #FFFFFF;
-border-radius: 66px;
-}
-
-.Speedometer{
-    position: absolute;
-width: 75.1px;
-height: 75.1px;
-left: 145.3px;
-top: 491.42px;
-}
-
-.Texto3{
-    position: absolute;
-width: 341.22px;
-height: 76.73px;
-left: 245px;
-top: 505px;
-
-font-family: Raleway;
-font-style: normal;
-font-weight: bold;
-font-size: 65.3px;
-line-height: 47px;
-/* identical to box height */
-
-text-transform: capitalize;
-
-color: #000000;
-}
-
-.Cuadro2{
-    position: absolute;
-width: 409.79px;
-height: 262.85px;
-left: 104.48px;
-top: 587.754px;
-
-background: #0771D3;
-border-radius: 60px;
-}
-
-.Texto4{
-    position: absolute;
-width: 396.73px;
-height: 99.59px;
-left: 133.87px;
-top: 610.61px;
-
-font-family: Raleway;
-font-style: normal;
-font-weight: bold;
-font-size: 29.38px;
-line-height: 34.28px;
-display: flex;
-align-items: center;
-letter-spacing: -0.24px;
-
-color: #FFFFFF;
-}
-
-</style>
-<body style="background-color:#1E1540;">
-        <div class = "row">
-            <div class = "col s12 m6 l4">
-                <img class="Fondo"src="./img2/Fondo.png">
-                <h1 class = "Rectangulo"></h1>
-                <img class="logoIPN"src="./img2/logo-poli-blanco.png" alt="" width="70.2" height="106.12" class="d-inline-block align-text-top">
-                <img class="logoEscom"src="./img2/logoESCOMBlanco.png" alt="" width="111.02" height="114.28" class="d-inline-block align-text-top">
-                <img class="Telefono"src="./img2/Telefono.png">
-                <p class ="ESCOM">ESCOM</p>
-                <p class = "Texto1">Encuesta a alumnos sobre la percepción de sus Clases<br/>Semestre 2021-2022</p>
-                <p class = "Texto2">Bienvenido X</p>
-                <p class = "Cuadro1"></p>
-                <img class="Speedometer"src="./img2/Speedometer.png">
-                <p class = "Texto3">Dashboard</p>
-                <p class = "Cuadro2"></p>
-                <p class = "Texto4">Total de alumnos inscritos (Semestre 2022/1):
-                </p>
+<body class="fondo dios">
+    <section>
+        <div class="container-fluid">
+            <nav class="navbar navbar-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand ml-md-auto" href="#">
+                    <img src="./img2/logo-poli-blanco.png" alt="" width="30" height="40" class="d-inline-block align-text-top">
+                    <img src="./img2/logoESCOMBlanco.png   " alt="" width="40" height="40" class="d-inline-block align-text-top">
+                    <a class="nav-item nav-link ml-auto escom">ESCOM</a>
+                    </a>
+                </div>
+            </nav> 
+        </div> 
+        <header class="row lineagris g-0 p-15 ">
+            <div class="col-12 ">
+                <h1 class="titulo3 px-lg-4 pt-lg-2 pb-lg-">Encuesta a alumnos sobre la percepción de sus Clases Semestre 2021-2022</h1>
             </div>
- 
+
+        </header>
+        <div class=" px-lg-4 pt-lg-2">
+            <h1 class="titulo4">Bienvenido X</h1>
         </div>
+        <div class="container-xxl rectangulo1 text-center mb-4">
+            <div class="row">
+                <div class="col-1 ">
+                    <img src="./img2/Speedometer.png" class=" d-inline-block iconos"> 
+                </div>
+                <div class="col-1 text-start">
+                    <p class = "titulo5 ">Dashboard</p>
+                </div>
+            </div>
+            <div class = "row">
+                <div class = "container rectangulo2 col-3 text-center">
+                <p class = "texto1 ">Total de alumnos inscritos <br/>(Semestre 2022/1):</p>
+                <img src="./img2/Personitas.png" class="personitas"> 
+                <p class = "texto2 col-12">1239</p>
+                </div>
+                <div class = "container-small col-8 offset-sm-1 text-start">
+                    <p class = "texto3 col-12 ">Preguntas:</p>
+                    <p class = "texto4 col-12">P1 -¿Cómo consideras que ha sido la impartición de los temas de tu clase?
+                        <br/>P2-¿Cómo consideras que se han atendido las preguntas que han planteado al docente?
+                        <br/>P3-¿Cómo consideras que ha sido el seguimiento del docente a tus tareas, examenes, proyectos, prácticas, etc?
+                        <br/>P4- ¿Las sesiones de tu clse se han impartido en los horarios oficiales y con la duración establecida?
+                        <br/>P5-¿Cómo consideras que se han tendido las distintas problemáticas relacionadas con tu clase?</p>
+                </div>
+                <p style="color: rgba(255, 255, 255, 0.96);">.</p> <!-- Ver como hacer más grande el espacio-->
+                </div>
+        </div>
+
+        <div class="container-xxl rectangulo1 text-center mb-4">
+            <div class="row">
+                <div class="col-12 ">
+                    <p class = "titulo6 text-start"><br/>Periodo 1</p>
+                </div>
+            </div>
+            <div class = "row">
+                <div class = "container col-4">
+                <p class = "texto5 text-start">Total de encuestas  realizadas:  23423</p>
+                    <canvas id="myChart"></canvas>
+                    <script src="./js/Administrador.js"></script>
+                </div>
+                <div class = "container col-8 text-center">
+                    <canvas id="myChart2"></canvas>
+                    <script src="./js/Administrador2.js"></script>
+                    <table class = "center">
+                        <tr>
+                          <th><b>Pregunta</b></th>
+                          <th><b>P1</b></th>
+                          <th><b>P2</b></th>
+                          <th><b>P3</b></th>
+                          <th><b>P4</b></th>
+                          <th><b>P5</b></th>
+                        </tr>
+                        <tr>
+                          <td><b>Resultado</b></td>
+                          <td>14</td>
+                          <td>10</td>
+                          <td>14</td>
+                          <td>10</td>
+                          <td>14</td>
+                        </tr>
+                      </table>
+                      <p style="color: rgba(255, 255, 255, 0.96);">.</p> <!-- Ver como hacer más grande el espacio-->
+                    </div>
+                </div>
+        </div>
+
+        <div class="container-xxl rectangulo1 text-center mb-4">
+            <div class="row">
+                <div class="col-1 ">
+                    <img src="./img2/Chat.png" class=" d-inline-block iconos"> 
+                </div>
+                <div class="col-1 text-start">
+                    <p class = "titulo5 ">Comentarios</p>
+                </div>
+            </div>
+            <div class = "row">
+                <div class = "container col-12 text-center">
+                    <p style="color: rgba(255, 255, 255, 0.96);">.<br/>.<br/>.<br/>.<br/>.<br/>.<br/>.<br/>.<br/>.<br/>.<br/>.<br/>.<br/>.<br/>.<br/>.<br/>.<br/>.<br/></p>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-center">
+                          <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                          </li>
+                          <li class="page-item"><a class="page-link" href="#">1</a></li>
+                          <li class="page-item"><a class="page-link" href="#">2</a></li>
+                          <li class="page-item"><a class="page-link" href="#">3</a></li>
+                          <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                          </li>
+                        </ul>
+                      </nav>
+                </div>
+        </div>
+    </section>
+    <script src="css/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
