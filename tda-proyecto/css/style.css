@@ -152,4 +152,8 @@ textarea{
     max-width: 500px;
     background: #C4C4C4;
 }
-
+.cuadroOscurito{
+    background-color: #c4c4c441;
+    border-radius: 66px;
+    height: 400px;
+}
