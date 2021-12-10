@@ -51,6 +51,14 @@
     color: #000000;
     font-size: 2rem;
 }
+.titulo8{
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #0771D3;
+
+}
 .rec1pequeño{
     background-color: #C4C4C4;
     border-radius: 22px;
@@ -156,4 +164,21 @@ textarea{
     background-color: #c4c4c441;
     border-radius: 66px;
     height: 400px;
+}
+
+.cuadroInvisible{
+    background-color: #c4c4c400;
+    border-radius: 66px;
+    height: 350px;
+}
+
+.bordeazul{
+    border: none;
+    border-bottom: 3px solid #0771D3;
+
+}
+
+.botonbuscar{
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
 }
