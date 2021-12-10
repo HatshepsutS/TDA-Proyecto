@@ -32,13 +32,24 @@
     font-size: 1.3rem;
 }
 .titulo5{
-font-family: Raleway;
-font-style: normal;
-font-weight: bold;
-font-size: 40px;
-line-height: 47px;
-text-transform: capitalize;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    color: #000000;
+    font-size: 1rem;
 
+}
+.titulo6{
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2rem;
+    color: var(--blanco);
+}
+.titulo7{
+    font-family: 'Raleway', sans-serif;
+    color: #000000;
+    font-size: 2rem;
 }
 .rec1pequeño{
     background-color: #C4C4C4;
@@ -104,9 +115,16 @@ text-transform: capitalize;
 }
 
 .rectangulo2{
-background: #0771D3;
-border-radius: 60px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 66px;
 }
+
+.rectanguloAzul{
+    background: #0771D3;
+    border-radius: 60px;
+}
+
 .texto-sombra{
     font-family: Poppins;
     font-style: normal;
@@ -116,93 +134,26 @@ border-radius: 60px;
     font-size: .9rem;
 }
 
-.iconos{
-    width: 46px;
-    height: 46px;
-}
-
-.texto1{
-text-align: center;
-font-family: Raleway;
-font-style: normal;
-font-weight: bold;
-font-size: 18px;
-line-height: 21px;
-letter-spacing: -0.24px;
-color: #FFFFFF;
-
-}
-
-.personitas{
-width: 66px;
-height: 66px;
-}
-
-.texto2{
-font-family: Raleway;
-font-style: normal;
-font-weight: bold;
-font-size: 36px;
-line-height: 42px;
-letter-spacing: -0.24px;
-color: #FFFFFF;
-}
-
-.texto3{
+.comentario{
     font-family: Raleway;
-font-style: normal;
-font-weight: bold;
-font-size: 20px;
-line-height: 21px;
-align-items: left;
-letter-spacing: -0.24px;
+    font-style: normal;
+    font-weight: bold;
+    color: #FFFFFF;
+    font-size: 1.5rem;
 
-color: #000000;
 }
 
-.texto4{
-    font-family: Raleway;
-font-style: normal;
-font-weight: bold;
-font-size: 18px;
-line-height: 24px;
-align-items: left;
-letter-spacing: -0.24px;
-
-color: #000000;
+textarea{
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    height: 300px;
+    min-height: 200px;
+    max-width: 500px;
+    background: #C4C4C4;
 }
-
-.titulo6{
-    font-family: Raleway;
-font-style: normal;
-font-weight: bold;
-font-size: 36px;
-line-height: 20px;
-color: #000000;
-text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.texto5{
-    font-family: Raleway;
-font-style: normal;
-font-weight: bold;
-font-size: 18px;
-line-height: 21px;
-letter-spacing: -0.24px;
-
-color: #000000;
-}
-
-table, th, td {
-border: 1px solid black;
-border-collapse: collapse;
-}
-td{
-background-color: rgba(196, 196, 196, 0.37);
-}
-
-table{
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+.cuadroOscurito{
+    background-color: #c4c4c441;
+    border-radius: 66px;
+    height: 400px;
 }
