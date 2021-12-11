@@ -1,5 +1,11 @@
 <?php
-include_once "./php/Dashboard.php"
+include_once "./php/Dashboard.php";
+$sql = "SELECT COMENTARIO FROM usuario";
+$check = mysqli_query($conexion, $sql);
+$comentarios = mysqli_fetch_all($check);
+$articuloPorPagina = 5;
+$numDatos = count($comentarios);
+$paginas = ceil($numDatos/$articuloPorPagina);
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +21,17 @@ include_once "./php/Dashboard.php"
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">   
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
+<!--
+<script>
+    $(document).ready(function(){
+        $('#Esta').click(function(){
+            $("#contenido").load("IndexDashboard.php?pagina=3");
+        });
+    });
+</script>
+  -->
 <body class="fondo dios">
   <section>
     <div class="container-fluid">
@@ -81,9 +97,41 @@ include_once "./php/Dashboard.php"
     
     <div class="row">
       <div class="col-md-5 col-sm-12">
-        <h1 class="titulo5 px-lg-4"> Total de encuestas  realizadas: 800</h1>
+        <h1 class="titulo5 px-lg-4"> Total de encuestas  realizadas: <?php echo($numDatos);?></h1>
         <canvas id="myChart"></canvas>
-          <script src="./js/Administrador.js"></script>
+          <script>
+            
+const data = {
+    labels: [
+      'P1',
+      'P2',
+      'P3',
+      'P4',
+      'P5'
+    ],
+    datasets: [{
+      data: [<?php echo $porcentajeP1[1]?>, <?php echo $porcentajeP1[2]?>, <?php echo $porcentajeP1[3]?>, <?php echo $porcentajeP1[4]?>,<?php echo $porcentajeP1[5]?>],
+      backgroundColor: [
+        '#0771D3',
+        '#1CCAD8',
+        '#0CF574',
+        '#F1BE42',
+        '#5185EC'
+      ],
+      hoverOffset: 4
+    }]
+  };
+
+  const config = {
+    type: 'doughnut',
+    data: data,
+  };
+
+  var myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
+          </script>
       </div>
       <div class="col-md-7 col-sm-12 text-center ">
         <canvas id="myChart2"></canvas>
@@ -103,11 +151,11 @@ include_once "./php/Dashboard.php"
           <tbody>
             <tr>
               <th scope="row">Resultados</th>
-              <td>14</td>
-              <td>10</td>
-              <td>14</td>
-              <td>10</td>
-              <td>14</td>
+              <td><?php echo $porcentajeP1[1]?></td>
+              <td><?php echo $porcentajeP1[2]?></td>
+              <td><?php echo $porcentajeP1[3]?></td>
+              <td><?php echo $porcentajeP1[4]?></td>
+              <td><?php echo $porcentajeP1[5]?></td>
             </tr>
           </tbody>
         </table>
@@ -125,25 +173,47 @@ include_once "./php/Dashboard.php"
         </svg>   Comentarios</h1>
       </div>
       <div class=" col-12 text-center align-self-center cuadroOscurito ">
-        <h1>Paginación</h1>
+        <!--<h1>Paginación</h1>-->
+        <?php
+        if(!$_GET){
+          echo "<script>location.href='IndexDashboard.php?pagina=1';</script>";
+        }
+        if($_GET['pagina']>$paginas || $_GET['pagina']<=0){
+          echo "<script>location.href='IndexDashboard.php?pagina=1';</script>";
+        }
+
+        $iniciar = ($_GET['pagina']-1)*$articuloPorPagina;
+        $sql_articulos ='SELECT COMENTARIO FROM usuario LIMIT :iniciar, :narticulos';
+        $sentencia = $pdo->prepare($sql_articulos);
+        $sentencia->bindParam(':iniciar', $iniciar, PDO::PARAM_INT);
+        $sentencia->bindParam(':narticulos',$articuloPorPagina, PDO::PARAM_INT);
+        $sentencia->execute();
+        $comentariosLim = $sentencia->fetchAll();
+        ?>
+
+        <?php foreach($comentariosLim as $comentario): ?>
         <div class="alert alert-primary" role="alert">
-          A simple
+          <?php echo $comentario[0]?>
         </div>
+        <?php endforeach?>
       </div>
 
       <div class = "row">
         <div class = "container col-12 text-center">
             <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
-                  <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
-                  </li>
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item">
-                    <a class="page-link" href="#">Siguiente</a>
-                  </li>
+                <ul class="pagination justify-content-center"><li class="page-item disabled">
+                <li class="page-item <?php echo $_GET['pagina']==1?'disabled':'' ?>"><a class="page-link" href="IndexDashboard.php?pagina=<?php echo $_GET['pagina']-1 ?>">Anterior</a></li>
+                  <?php $auxiliar = $paginas>5?5:$paginas; for($i=0;$i<$auxiliar-1;$i++): ?>
+                  <li class="page-item <?php echo $_GET['pagina'] == $i+1 ? 'active': '' ?>"><a class="page-link" href="IndexDashboard.php?pagina=<?php echo $i+1;?>">
+                      <?php echo $i+1;?>
+                  </a></li>
+                  <?php endfor ?>
+                  <li class="page-item disabled"><a class="page-link">...</a></li>
+                  
+                  <li class="page-item <?php echo $_GET['pagina'] == $i+1 ? 'active': '' ?>"><a class="page-link" href="IndexDashboard.php?pagina=<?php echo $i+$paginas-4;?>">
+                  <?php echo $i+$paginas-4;?>
+
+                  <li class="page-item <?php echo $_GET['pagina']>=$paginas?'disabled':'' ?>"><a class="page-link" href="IndexDashboard.php?pagina=<?php echo $_GET['pagina']+1 ?>">Siguiente</a></li>
                 </ul>
               </nav>
         </div>
