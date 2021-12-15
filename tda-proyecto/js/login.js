@@ -1,5 +1,6 @@
+
 $(document).ready(()=>{
-  $("#login_submit").click(function(){
+  $("#login_submit").click(function(){//El error está aqui
     
     var ID_USUARIO=$("#ID_USUARIO").val();
     var Contrasena=$("#Contrasena").val();
@@ -10,35 +11,8 @@ $(document).ready(()=>{
       data:{ID_USUARIO:ID_USUARIO, Contrasena:Contrasena},
       cache:false,
       success:(respAX) => {
-        if (respAX) {
-          console.log(respAX);
-          let AX = JSON.parse(respAX);
-          alert(AX);
-        }
-      },
-       error:() => {
-
-         alert("errorr");
-       }
-
-
+          alert(respAX);
+      }
       });
-
-
-      
-    } );
-   
- 
+    });
 });
-
-
-
-
-
-
-
-
-
-
-
-
