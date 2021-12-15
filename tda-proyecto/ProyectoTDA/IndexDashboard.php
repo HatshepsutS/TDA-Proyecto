@@ -1,6 +1,6 @@
 <?php
 include_once "./php/Dashboard.php";
-$sql = "SELECT COMENTARIO FROM usuario";
+$sql = "SELECT * FROM usuario";
 $check = mysqli_query($conexion, $sql);
 $comentarios = mysqli_fetch_all($check);
 $articuloPorPagina = 5;
@@ -23,15 +23,7 @@ $paginas = ceil($numDatos/$articuloPorPagina);
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-<!--
-<script>
-    $(document).ready(function(){
-        $('#Esta').click(function(){
-            $("#contenido").load("IndexDashboard.php?pagina=3");
-        });
-    });
-</script>
-  -->
+
 <body class="fondo dios">
   <section>
     <div class="container-fluid">

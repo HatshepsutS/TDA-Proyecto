@@ -1,16 +1,12 @@
 <?php
-
 $server='25.84.113.73';
 $user='root';
 $pass='=pEkL8AjixedeYAw6JA@';
 $db='encuesta';
 $conexion=new mysqli($server,$user,$pass,$db);
 $pdo = new PDO('mysql:host=25.84.113.73; dbname=encuesta', $user, $pass);
+$respAx = [];
 
-/*
-$conexion=new mysqli('localhost','root','2.71828','encuesta');
-$pdo = new PDO('mysql:host=localhost; dbname=encuesta', 'root', '2.71828');
-*/
 mysqli_set_charset($conexion, "utf8");
 
 for($auxGlob = 1; $auxGlob<=5; $auxGlob++){
@@ -28,9 +24,6 @@ for($auxGlob = 1; $auxGlob<=5; $auxGlob++){
         $sumaP1 += $auxiliarPregunta;
         $digito--;
     }
-    $porcentajeP1[$auxGlob] = (($sumaP1) / 231)/5;
-    $porcentajeP1[$auxGlob] = round($porcentajeP1[$auxGlob],2);
-    //echo $porcentajeP1[$auxGlob]."<br/>";
+    $porcentajeP1[$auxGlob] = round((($sumaP1) / 231)/5,2);
     }
-
 ?>
