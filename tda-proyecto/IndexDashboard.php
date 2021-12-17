@@ -1,4 +1,6 @@
 <?php
+session_start();
+if(isset($_SESSION['ID_USUARIO'])){
 include_once "./php/Dashboard.php";
 $sql = "SELECT * FROM usuario";
 $check = mysqli_query($conexion, $sql);
@@ -45,7 +47,7 @@ $paginas = ceil($numDatos/$articuloPorPagina);
       </div>
   </header>
   <div class=" px-lg-4 pt-lg p-2">
-    <h1 class="titulo4">Bienvenido X</h1>
+    <h1 class="titulo4">Bienvenido <?php echo $nombreAdmin;?></h1>
   </div>
 <main>
   <div class=" container-xl rectangulo2  px-lg-3 pt-lg-3 pb-lg-3 mb-4 ">
@@ -237,7 +239,7 @@ const data = {
               </a>
             </li>
             <li>
-              <a href="http://127.0.0.1:5500/tda-proyecto/Administrador.html" data-mfb-label="Salir" class="mfb-component__button--child">
+              <a href="./Index.html" data-mfb-label="Salir" class="mfb-component__button--child">
                 <i class="bi bi-arrow-up-left-circle"></i>
                 <i class="mfb-component__child-icon ion-android-exit"></i>
               </a>
@@ -249,3 +251,9 @@ const data = {
       <script src="css/js/bootstrap.bundle.min.js"></script> 
 </body>
 </html>
+<?php 
+}
+else{
+  header("location: ./Index.html");
+}
+?>

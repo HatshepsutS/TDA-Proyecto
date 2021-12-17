@@ -158,7 +158,7 @@ $paginas = ceil($numDatos/$articuloPorPagina);
               </a>
             </li>
             <li>
-              <a href="http://127.0.0.1:5500/tda-proyecto/Administrador.html" data-mfb-label="Salir" class="mfb-component__button--child">
+              <a href="./Index.html" data-mfb-label="Salir" class="mfb-component__button--child">
                 <i class="bi bi-arrow-up-left-circle"></i>
                 <i class="mfb-component__child-icon ion-android-exit"></i>
               </a>

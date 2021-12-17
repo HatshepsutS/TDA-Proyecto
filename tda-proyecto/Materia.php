@@ -157,7 +157,8 @@ include_once "./php/MateriaAux.php";
                     for($auxGlob = 1; $auxGlob<=5; $auxGlob++){
                         //Problema abajo////////////////////////////////////////////
                         
-                        $sqlGrupo = "SELECT distinct a.materia , a.grupo  , GRUPO, ID_MATERIA, MUY_SATISFECHO, SATISFECHO, NO_ME_QUEJO, POCO_SATISFECHO, NADA_SATISFECHO from encuesta a inner join materia b on a.ID_Materia =b.IDMateria";
+                        //$sqlPreguntas = "SELECT distinct a.grupo, a.ID_MATERIA, b.MUY_SATISFECHO, b.SATISFECHO, b.NO_ME_QUEJO, b.POCO_SATISFECHO, b.NADA_SATISFECHO from materia a inner join encuesta b ON a.ID_MATERIA = b.ID_MATERIA";
+                        $sqlPreguntas = "SELECT ID_MATERIA, ID_PREGUNTA, MUY_SATISFECHO, SATISFECHO, NO_ME_QUEJO, POCO_SATISFECHO, NADA_SATISFECHO FROM encuesta WHERE GRUPO = '$Grupo' AND ID_PREGUNTA = $auxGlob AND ID_MATERIA = '$busqAux'";
                         $checkPreguntas = mysqli_query($conexion, $sqlPreguntas);
                         $preguntas = mysqli_fetch_all($checkPreguntas);
 
@@ -171,7 +172,7 @@ include_once "./php/MateriaAux.php";
                             $sumaP1 += $auxiliarPregunta;
                             $digito--;
                         }
-                        $Auxiliar = round((($sumaP1) / 10)/5,2);
+                        $Auxiliar = round((($sumaP1) / 5)/5,2);
                         echo "<td>$Auxiliar</td>";
                         }
                     }
@@ -222,7 +223,7 @@ include_once "./php/MateriaAux.php";
               </a>
             </li>
             <li>
-              <a href="http://127.0.0.1:5500/tda-proyecto/Administrador.html" data-mfb-label="Salir" class="mfb-component__button--child">
+              <a href="./Index.html" data-mfb-label="Salir" class="mfb-component__button--child">
                 <i class="bi bi-arrow-up-left-circle"></i>
                 <i class="mfb-component__child-icon ion-android-exit"></i>
               </a>

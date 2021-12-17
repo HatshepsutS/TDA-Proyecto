@@ -68,11 +68,12 @@ $(document).ready(()=>{
                     var Contrasena=$("#Contrasena").val();
                     $.ajax({
                       type:"POST",
-                      url:"./js/php/login.php",
+                      url:"./php/login.php",
                       data:{ID_USUARIO:ID_USUARIO, Contrasena:Contrasena},
                       cache:false,
                       success:(respAX) => {
                         let AX = JSON.parse(respAX);
+                        
                         if(AX.cod == 1){
                           Swal.fire({
                             title: 'Bien!',
