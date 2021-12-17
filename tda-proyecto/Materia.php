@@ -1,3 +1,7 @@
+<?php
+$NOMBRE_MATERIA = $_REQUEST['materia'];
+include_once "./php/MateriaAux.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,14 +37,9 @@
           <h1 class="titulo3 px-lg-4 pt-lg-2 pb-lg-">Encuesta a alumnos sobre la percepción de sus Clases Semestre 2021-2022</h1>
       </div>
   </header>
-  <div class=" px-lg-4 pt-lg ">
-    <div class="col-sm-12 text-center col-md-6">
-      <h1 class="titulo6 px-lg-5 mb-1"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-card-list" viewBox="0 0 16 16">
-        <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
-        <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
-      </svg>   Unidades de Aprendizaje</h1>
-    </div>
-  </div>
+  <div class="col-sm-12 text-center col-md-6">
+<h1 style="color:white; font-family: Raleway; font-size: 50px;"><?php echo $NOMBRE_MATERIA; ?></h1>
+</div>
 <main>
 
 
@@ -54,21 +53,54 @@
       <div class=" col-12 text-center align-self-center lol px-lg-0 pt-lg-0 ">
         <ul class="tabs">
           <li class="active titulo8">General</li>
-          <li class="titulo8">Grupos</li>
-          
+          <li class="titulo8">Grupos</li> 
         </ul>
 
         <ul class="tab__content">
           <li class="active">
             <div class="content__wrapper">
+                
               <div class="row">
+                  
                 <div class="col-md-5 col-sm-12">
                   <canvas id="myChart"></canvas>
-                    <script src="./js/Administrador.js"></script>
+                    <script>
+                        const data = {
+    labels: [
+      'P1',
+      'P2',
+      'P3',
+      'P4',
+      'P5'
+    ],
+    datasets: [{
+      data: [<?php echo $porcentajeP1[1]?>, <?php echo $porcentajeP1[2]?>, <?php echo $porcentajeP1[3]?>, <?php echo $porcentajeP1[4]?>,<?php echo $porcentajeP1[5]?>],
+      backgroundColor: [
+        '#0771D3',
+        '#1CCAD8',
+        '#0CF574',
+        '#F1BE42',
+        '#5185EC'
+      ],
+      hoverOffset: 4
+    }]
+  };
+
+  const config = {
+    type: 'doughnut',
+    data: data,
+  };
+
+  var myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
+                    </script>
                 </div>
                 <div class="col-md-7 col-sm-12 text-center ">
                   <canvas id="myChart2"></canvas>
                   <script src="./js/Administrador2.js"></script>
+                  
                 <div class="col-sm-12 p-5">  
                   <table class="table table-light ">
                     <thead>
@@ -84,11 +116,11 @@
                     <tbody>
                       <tr>
                         <th scope="row">Resultados</th>
-                        <td>14</td>
-                        <td>10</td>
-                        <td>14</td>
-                        <td>10</td>
-                        <td>14</td>
+                        <td><?php echo $porcentajeP1[1]?></td>
+                        <td><?php echo $porcentajeP1[2]?></td>
+                        <td><?php echo $porcentajeP1[3]?></td>
+                        <td><?php echo $porcentajeP1[4]?></td>
+                        <td><?php echo $porcentajeP1[5]?></td>
                       </tr>
                     </tbody>
                   </table>
@@ -100,64 +132,62 @@
           <li>
             <div class="content__wrapper">
               <div class="row text-center">
-      
-                <div class=" col-12 text-center align-self-center cuadroInvisible">
-                  <table class="table">
+              <div class="col-sm-12 p-5">  
+                  <table class="table table-light ">
                     <thead>
-                      <tr class="titulo8">
-                        <th scope="col">Grupo</th>
-                        <th scope="col">P1</th>
-                        <th scope="col">P2</th>
-                        <th scope="col">P3</th>
-                        <th scope="col">P4</th>
-                        <th scope="col">P5</th>
+                      <tr> <!--Recibir el grupo individual por medio de session-->
+                        <th scope="col"><p style="color:#0771D3;">Grupo</p></th>
+                        <th scope="col"><p style="color:#0771D3;">P1</p></th>
+                        <th scope="col"><p style="color:#0771D3;">P2</p></th>
+                        <th scope="col"><p style="color:#0771D3;">P3</p></th>
+                        <th scope="col"><p style="color:#0771D3;">P4</p></th>
+                        <th scope="col"><p style="color:#0771D3;">P5</p></th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row">3CM1</th>
-                        <td>4.5</td>
-                        <td>4.6</td>
-                        <td>4.5</td>
-                        <td>4.6</td>
-                        <td>4.6</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3CM2</th>
-                        <td>4.5</td>
-                        <td>4.6</td>
-                        <td>4.5</td>
-                        <td>4.6</td>
-                        <td>4.6</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3CM3</th>
-                        <td>4.5</td>
-                        <td>4.6</td>
-                        <td>4.5</td>
-                        <td>4.6</td>
-                        <td>4.6</td>
-                      </tr>
+
+                    <?php 
+                    $sqlGrupo = "SELECT GRUPO FROM materia WHERE ID_MATERIA = '$busqAux'"; //Poner parámetro de por materia
+                    $checkGrupo = mysqli_query($conexion, $sqlGrupo);
+                    $GrupoAux = mysqli_fetch_all($checkGrupo);
+                    foreach($GrupoAux as $GrupoA){
+                        echo "<tr>";
+                        foreach($GrupoA as $Grupo){
+                            echo "<th>$Grupo</th>";
+                    for($auxGlob = 1; $auxGlob<=5; $auxGlob++){
+                        //Problema abajo////////////////////////////////////////////
+                        
+                        $sqlGrupo = "SELECT distinct a.materia , a.grupo  , GRUPO, ID_MATERIA, MUY_SATISFECHO, SATISFECHO, NO_ME_QUEJO, POCO_SATISFECHO, NADA_SATISFECHO from encuesta a inner join materia b on a.ID_Materia =b.IDMateria";
+                        $checkPreguntas = mysqli_query($conexion, $sqlPreguntas);
+                        $preguntas = mysqli_fetch_all($checkPreguntas);
+
+                        $digito = 5;
+                        $sumaP1 = 0;
+                        for($i=2;$i<=6;$i++){
+                            $auxiliarPregunta = 0;
+                            foreach($preguntas as $pregunta){
+                                $auxiliarPregunta += $pregunta[$i]*$digito;
+                            }
+                            $sumaP1 += $auxiliarPregunta;
+                            $digito--;
+                        }
+                        $Auxiliar = round((($sumaP1) / 10)/5,2);
+                        echo "<td>$Auxiliar</td>";
+                        }
+                    }
+                    echo "</tr>";
+                    }
+                    
+                    ?>
                     </tbody>
                   </table>
                 </div>
+                
           
-                <div class = "row">
-                  <div class = "container col-12 text-center">
-                      <nav aria-label="Page navigation example">
-                          <ul class="pagination justify-content-center">
-                            <li class="page-item disabled">
-                              <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                              <a class="page-link" href="#">Siguiente</a>
-                            </li>
-                          </ul>
-                        </nav>
-                  </div>
+
+
+
+
           </div>
             </div>
           </li>
@@ -260,6 +290,6 @@
   
   
 });
-      </script>
+</script>
 </body>
 </html>

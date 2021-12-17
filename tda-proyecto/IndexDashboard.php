@@ -15,13 +15,15 @@ $paginas = ceil($numDatos/$articuloPorPagina);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/css/bootstrap.min.css">
-    <title>Prueba</title>
+    <title>Administrador</title>
     <link href="./botonflot/dist/mfb.css" rel="stylesheet">
     <script src="./botonflot/dist/mfb.js"></script>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">   
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">   
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body class="fondo dios">
@@ -221,7 +223,7 @@ const data = {
 
 
 </section>
-    <section> <!--Botón flotante-->>
+<section> <!--Botón flotante-->>
     <ul id="menu" class="mfb-component--br mfb-zoomin" data-mfb-toggle="hover">
         <li class="mfb-component__wrap">
           <a href="#" class="mfb-component__button--main">
@@ -230,8 +232,8 @@ const data = {
           </a>
           <ul class="mfb-component__list">
             <li>
-              <a href="#" data-mfb-label="Unidades de aprendizaje" class="mfb-component__button--child">
-                <i class="mfb-component__child-icon ion-document-text"></i>
+              <a href="./UnidadesAprendizaje.php" data-mfb-label="U.A." class="mfb-component__button--child">
+                <i class="mfb-component__child-icon ion-speedometer"></i>
               </a>
             </li>
             <li>
