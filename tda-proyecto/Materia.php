@@ -1,4 +1,6 @@
 <?php
+session_start();
+if(isset($_SESSION['ID_USUARIO'])){
 $NOMBRE_MATERIA = $_REQUEST['materia'];
 include_once "./php/MateriaAux.php";
 ?>
@@ -294,3 +296,10 @@ include_once "./php/MateriaAux.php";
 </script>
 </body>
 </html>
+
+<?php 
+}
+else{
+  header("location: ./Index.html");
+}
+?>

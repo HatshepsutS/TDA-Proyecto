@@ -1,6 +1,6 @@
 <?php
 session_start();
-//Poner la session que mande el grupo
+if(isset($_SESSION['ID_USUARIO'])){
 
 $server='25.84.113.73';
 $user='root';
@@ -170,3 +170,10 @@ $paginas = ceil($numDatos/$articuloPorPagina);
       <script src="css/js/bootstrap.bundle.min.js"></script> 
 </body>
 </html>
+
+<?php 
+}
+else{
+  header("location: ./Index.html");
+}
+?>
