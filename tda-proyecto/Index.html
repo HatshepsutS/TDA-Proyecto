@@ -80,8 +80,13 @@ $(document).ready(()=>{
                             text: AX['msj'],
                             icon: 'success',
                             confirmButtonText: 'Continuar',
-                            timer:3000
+                            timer:3000,
+                            didDestroy:()=>{
+                        window.location.href = "./EncuestaUsuario.php";
+                      }
+                          
                           })
+                          
                     }
                     else if(AX.cod == 2){
                       Swal.fire({
@@ -95,12 +100,25 @@ $(document).ready(()=>{
                       }
                       })
                     }
+                    else if(AX.cod == 3){
+                      Swal.fire({
+                        title: 'Bien!',
+                        text: AX['msj'],
+                        icon: 'info',
+                        confirmButtonText: 'Continuar',
+                        timer:3000,
+                        didDestroy:()=>{
+                        window.location.href = "./DespedidaUsuario.html";
+                      }
+                        
+                      })
+                    }
                     else{
                       Swal.fire({
                         title: 'Error!',
                         text: AX['msj'],
                         icon: 'error',
-                        confirmButtonText: 'Dale pa fuera',
+                        confirmButtonText: 'Continuar',
                         timer:3000
 
                       })

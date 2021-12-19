@@ -1,13 +1,18 @@
 <?php
+
 session_start();
 if(isset($_SESSION['ID_USUARIO'])){
 include_once "./php/Dashboard.php";
-$sql = "SELECT * FROM usuario";
+$sql = "SELECT * FROM usuario  WHERE id_usuario  REGEXP '[0-9]' and id_formulario is not null";
 $check = mysqli_query($conexion, $sql);
 $comentarios = mysqli_fetch_all($check);
 $articuloPorPagina = 5;
 $numDatos = count($comentarios);
 $paginas = ceil($numDatos/$articuloPorPagina);
+$sql2 = "SELECT * FROM usuario  WHERE id_usuario  REGEXP '[0-9]'";
+$check2 = mysqli_query($conexion, $sql2);
+$totalinscritos =count( mysqli_fetch_all($check2));
+
 ?>
 
 <!DOCTYPE html>
@@ -68,7 +73,7 @@ $paginas = ceil($numDatos/$articuloPorPagina);
           <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
           <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
         </svg>
-        <h1 class="titulo6 pb-lg-1 ">1231</h1>
+        <h1 class="titulo6 pb-lg-1 "><?php echo $totalinscritos;?></h1>
       </div>
 
       <div class="col-sm-12 col-md-8 mb-4">
