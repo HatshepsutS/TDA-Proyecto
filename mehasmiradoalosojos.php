@@ -16,13 +16,23 @@
 <link href="./js/SweetAlert/sweetalert2.css" rel="stylesheet">
 <script src = "./js/SweetAlert/sweetalert2.all.min.js"></script>
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<?php
+  if(isset($_POST['submit'])){
+    echo "matenmeeeeeee";
+
+
+  }
+
+ 
+ ?>
+
 
 </head>
 
 <body class="fondo">
   <section>
     <div class="row g-0">
-      <div class="col-lg-6 ">
+      <div class="col-lg-6 " method="post">
         <div class="px-lg-3 pt-lg-2 pb-lg-3 ">
           <img src="./img2/ipn1.png" alt="img-fluid">
           <img src="./img2/logoEscom2.png" alt="img-fluid">
@@ -51,9 +61,9 @@
                 Contraseña</label>
               <input type="password" class="form-control rec1pequeño border-0" placeholder="Ingrese su contraseña" id="Contrasena" name="Contrasena" data-validetta="required,minLength[5],maxLength[15]" maxlength="15">
             </div>
-            <form action="/yadiossueltame.php" method="POST">
-              <div class="g-recaptcha" data-sitekey="6Ld71bYdAAAAAE83Sg6irr1Hl-wJog5LCTuCmXOt"></div>
-          </form>
+            <div class="row">
+                <div class="g-recaptcha" data-sitekey="6LfnnrYdAAAAAMPKry3Nf6-CiIuXGAVGEg5b2svd"></div>
+            </div>
             <div class="text-center">
               <button type="submit" class="btn btn-lg btn-primary"  id="login_submit" name="login_submit">
                 <script>
