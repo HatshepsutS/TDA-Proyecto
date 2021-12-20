@@ -29,8 +29,11 @@
         <div class="px-lg-3 py-lg-2 p-4 order-2 order-sm-2 order-md-1">
           <h1 class="titulo1 mb-4">Encuesta a alumnos sobre la percepción de sus Clases Semestre 2021-2022 </h1>
           <div class="row cuadro1 offset-sm-2 justify-content-center align-items-center ">
-            <div class="col text-center">
-              <h1 class="form-text prendido">Ingresar datos</h1>
+            <div class="col-6 text-center">
+              <a href="#" class="form-text prendido">Alumno</a>
+            </div>
+            <div class="col-6 text-center">
+              <a href="./Administrador.html" class=" form-text text-muted text-decoration-none apagado">Administrador </a>
             </div>
           <form class="cuadro2 p-4"  id="formLogin" name="formLogin" method="POST">
             <div class="mb-3 ">
@@ -65,25 +68,19 @@ $(document).ready(()=>{
                     var Contrasena=$("#Contrasena").val();
                     $.ajax({
                       type:"POST",
-                      url:"./php/login.php",
+                      url:"./js/php/login.php",
                       data:{ID_USUARIO:ID_USUARIO, Contrasena:Contrasena},
                       cache:false,
                       success:(respAX) => {
                         let AX = JSON.parse(respAX);
-                        
                         if(AX.cod == 1){
                           Swal.fire({
                             title: 'Bien!',
                             text: AX['msj'],
                             icon: 'success',
                             confirmButtonText: 'Continuar',
-                            timer:3000,
-                            didDestroy:()=>{
-                        window.location.href = "./EncuestaUsuario.php";
-                      }
-                          
+                            timer:3000
                           })
-                          
                     }
                     else if(AX.cod == 2){
                       Swal.fire({
@@ -97,25 +94,12 @@ $(document).ready(()=>{
                       }
                       })
                     }
-                    else if(AX.cod == 3){
-                      Swal.fire({
-                        title: 'Bien!',
-                        text: AX['msj'],
-                        icon: 'info',
-                        confirmButtonText: 'Continuar',
-                        timer:3000,
-                        didDestroy:()=>{
-                        window.location.href = "./DespedidaUsuario.html";
-                      }
-                        
-                      })
-                    }
                     else{
                       Swal.fire({
                         title: 'Error!',
                         text: AX['msj'],
                         icon: 'error',
-                        confirmButtonText: 'Continuar',
+                        confirmButtonText: 'Dale pa fuera',
                         timer:3000
 
                       })
