@@ -1,11 +1,18 @@
 <?php
+
+session_start();
+if(isset($_SESSION['ID_USUARIO'])){
 include_once "./php/Dashboard.php";
-$sql = "SELECT * FROM usuario";
+$sql = "SELECT * FROM usuario  WHERE id_usuario  REGEXP '[0-9]' and id_formulario is not null";
 $check = mysqli_query($conexion, $sql);
 $comentarios = mysqli_fetch_all($check);
 $articuloPorPagina = 5;
 $numDatos = count($comentarios);
 $paginas = ceil($numDatos/$articuloPorPagina);
+$sql2 = "SELECT * FROM usuario  WHERE id_usuario  REGEXP '[0-9]'";
+$check2 = mysqli_query($conexion, $sql2);
+$totalinscritos =count( mysqli_fetch_all($check2));
+
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +52,7 @@ $paginas = ceil($numDatos/$articuloPorPagina);
       </div>
   </header>
   <div class=" px-lg-4 pt-lg p-2">
-    <h1 class="titulo4">Bienvenido X</h1>
+    <h1 class="titulo4">Bienvenido <?php echo $nombreAdmin;?></h1>
   </div>
 <main>
   <div class=" container-xl rectangulo2  px-lg-3 pt-lg-3 pb-lg-3 mb-4 ">
@@ -66,7 +73,7 @@ $paginas = ceil($numDatos/$articuloPorPagina);
           <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
           <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
         </svg>
-        <h1 class="titulo6 pb-lg-1 ">1231</h1>
+        <h1 class="titulo6 pb-lg-1 "><?php echo $totalinscritos;?></h1>
       </div>
 
       <div class="col-sm-12 col-md-8 mb-4">
@@ -233,11 +240,11 @@ const data = {
           <ul class="mfb-component__list">
             <li>
               <a href="./UnidadesAprendizaje.php" data-mfb-label="U.A." class="mfb-component__button--child">
-                <i class="mfb-component__child-icon ion-speedometer"></i>
+                <i class="mfb-component__child-icon ion-ios-book-outline"></i>
               </a>
             </li>
             <li>
-              <a href="http://127.0.0.1:5500/tda-proyecto/Administrador.html" data-mfb-label="Salir" class="mfb-component__button--child">
+              <a href="./Index.html" data-mfb-label="Salir" class="mfb-component__button--child">
                 <i class="bi bi-arrow-up-left-circle"></i>
                 <i class="mfb-component__child-icon ion-android-exit"></i>
               </a>
@@ -249,3 +256,9 @@ const data = {
       <script src="css/js/bootstrap.bundle.min.js"></script> 
 </body>
 </html>
+<?php 
+}
+else{
+  header("location: ./Index.html");
+}
+?>
