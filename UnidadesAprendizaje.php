@@ -1,6 +1,6 @@
 <?php
 session_start();
-//Poner la session que mande el grupo
+if(isset($_SESSION['ID_USUARIO'])){
 
 $server='25.84.113.73';
 $user='root';
@@ -75,9 +75,9 @@ $paginas = ceil($numDatos/$articuloPorPagina);
       <div class="col-md-12  px-lg-5 pt-lg-2 pb-lg-3 ">
       <form class="d-flex">
         <input class="form-control me-2 bordeazul" type="search" placeholder="Buscar" aria-label="Search">
-        <button class="btn btn-primary botonbuscar" disabled data-bs-toggle="button" autocomplete="off" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-search " viewBox="0 0 16 16">
+        <button class="btn btn-primary botonbuscar" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-search " viewBox="0 0 16 16">
           <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-        </svg></button>
+        </svg></button> 
       </form>
       </div>
     </div>
@@ -114,7 +114,15 @@ $paginas = ceil($numDatos/$articuloPorPagina);
             <?php echo $comentario[1]?>
               </div>
               <div class="col-sm">
-              <a href="./Materia.php?materia=<?php echo $comentario[1]?>"><img src="./img2/ojito.png" alt="" width="30" height="40" class="d-inline-block align-text-right"></a> <!-- AQUI ------------------------------------->
+              <a href="./Materia.php?materia=<?php echo $comentario[1]?>"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+              <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+              <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+              </svg></a> 
+              <a href="./Materia.php?materia=<?php echo $comentario[1]?>">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-file-earmark-arrow-down-fill" viewBox="0 0 16 16">
+              <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zm-1 4v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 11.293V7.5a.5.5 0 0 1 1 0z"/>
+              </svg>
+              </a><!-- AQUI ------------------------------------->
               </div>
               </div>
         </div>
@@ -158,7 +166,7 @@ $paginas = ceil($numDatos/$articuloPorPagina);
               </a>
             </li>
             <li>
-              <a href="http://127.0.0.1:5500/tda-proyecto/Administrador.html" data-mfb-label="Salir" class="mfb-component__button--child">
+              <a href="./Index.html" data-mfb-label="Salir" class="mfb-component__button--child">
                 <i class="bi bi-arrow-up-left-circle"></i>
                 <i class="mfb-component__child-icon ion-android-exit"></i>
               </a>
@@ -170,3 +178,10 @@ $paginas = ceil($numDatos/$articuloPorPagina);
       <script src="css/js/bootstrap.bundle.min.js"></script> 
 </body>
 </html>
+
+<?php 
+}
+else{
+  header("location: ./Index.html");
+}
+?>

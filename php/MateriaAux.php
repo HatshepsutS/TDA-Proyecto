@@ -17,7 +17,7 @@ $busqAux = $preguntasAux[0][0];
 //echo $busqAux;
 
 for($auxGlob = 1; $auxGlob<=5; $auxGlob++){
-    $sqlPreguntas = "SELECT * FROM encuesta WHERE ID_PREGUNTA = $auxGlob AND ID_MATERIA = '$busqAux'"; //Poner parámetro de por materia
+    $sqlPreguntas = "SELECT ID_MATERIA, ID_PREGUNTA, MUY_SATISFECHO, SATISFECHO, NO_ME_QUEJO, POCO_SATISFECHO, NADA_SATISFECHO FROM encuesta WHERE ID_PREGUNTA = $auxGlob AND ID_MATERIA = '$busqAux'"; //Poner parámetro de por materia
     $checkPreguntas = mysqli_query($conexion, $sqlPreguntas);
     $preguntas = mysqli_fetch_all($checkPreguntas);
     

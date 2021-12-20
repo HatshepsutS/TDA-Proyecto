@@ -1,4 +1,6 @@
 <?php
+session_start();
+if(isset($_SESSION['ID_USUARIO'])){
 $NOMBRE_MATERIA = $_REQUEST['materia'];
 include_once "./php/MateriaAux.php";
 ?>
@@ -37,8 +39,19 @@ include_once "./php/MateriaAux.php";
           <h1 class="titulo3 px-lg-4 pt-lg-2 pb-lg-">Encuesta a alumnos sobre la percepción de sus Clases Semestre 2021-2022</h1>
       </div>
   </header>
-  <div class="col-sm-12 text-center col-md-6">
-<h1 style="color:white; font-family: Raleway; font-size: 50px;"><?php echo $NOMBRE_MATERIA; ?></h1>
+  <div class="row px-lg-5">
+  <div class="jesus col-3">
+  <div class="row jesus"> 
+  <p class="titulo8 px-lg-5 pt-lg-2 pb-lg">
+  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-badge" viewBox="0 0 16 16">
+  <path d="M6.5 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+  <path d="M4.5 0A2.5 2.5 0 0 0 2 2.5V14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2.5A2.5 2.5 0 0 0 11.5 0h-7zM3 2.5A1.5 1.5 0 0 1 4.5 1h7A1.5 1.5 0 0 1 13 2.5v10.795a4.2 4.2 0 0 0-.776-.492C11.392 12.387 10.063 12 8 12s-3.392.387-4.224.803a4.2 4.2 0 0 0-.776.492V2.5z"/>
+</svg>Total de encuestas: </p>
+  </div>  
+  </div>
+  <div class="col-sm-12 text-center col-md-7">
+<h1 class="titulo6""><?php echo $NOMBRE_MATERIA; ?></h1>
+</div>
 </div>
 <main>
 
@@ -157,7 +170,8 @@ include_once "./php/MateriaAux.php";
                     for($auxGlob = 1; $auxGlob<=5; $auxGlob++){
                         //Problema abajo////////////////////////////////////////////
                         
-                        $sqlGrupo = "SELECT distinct a.materia , a.grupo  , GRUPO, ID_MATERIA, MUY_SATISFECHO, SATISFECHO, NO_ME_QUEJO, POCO_SATISFECHO, NADA_SATISFECHO from encuesta a inner join materia b on a.ID_Materia =b.IDMateria";
+                        //$sqlPreguntas = "SELECT distinct a.grupo, a.ID_MATERIA, b.MUY_SATISFECHO, b.SATISFECHO, b.NO_ME_QUEJO, b.POCO_SATISFECHO, b.NADA_SATISFECHO from materia a inner join encuesta b ON a.ID_MATERIA = b.ID_MATERIA";
+                        $sqlPreguntas = "SELECT ID_MATERIA, ID_PREGUNTA, MUY_SATISFECHO, SATISFECHO, NO_ME_QUEJO, POCO_SATISFECHO, NADA_SATISFECHO FROM encuesta WHERE GRUPO = '$Grupo' AND ID_PREGUNTA = $auxGlob AND ID_MATERIA = '$busqAux'";
                         $checkPreguntas = mysqli_query($conexion, $sqlPreguntas);
                         $preguntas = mysqli_fetch_all($checkPreguntas);
 
@@ -171,7 +185,7 @@ include_once "./php/MateriaAux.php";
                             $sumaP1 += $auxiliarPregunta;
                             $digito--;
                         }
-                        $Auxiliar = round((($sumaP1) / 10)/5,2);
+                        $Auxiliar = round((($sumaP1) / 5)/5,2);
                         echo "<td>$Auxiliar</td>";
                         }
                     }
@@ -218,11 +232,11 @@ include_once "./php/MateriaAux.php";
           <ul class="mfb-component__list">
             <li>
               <a href="./UnidadesAprendizaje.php" data-mfb-label="U.A." class="mfb-component__button--child">
-                <i class="mfb-component__child-icon ion-speedometer"></i>
+                <i class="mfb-component__child-icon ion-ios-book-outline"></i>
               </a>
             </li>
             <li>
-              <a href="http://127.0.0.1:5500/tda-proyecto/Administrador.html" data-mfb-label="Salir" class="mfb-component__button--child">
+              <a href="./Index.html" data-mfb-label="Salir" class="mfb-component__button--child">
                 <i class="bi bi-arrow-up-left-circle"></i>
                 <i class="mfb-component__child-icon ion-android-exit"></i>
               </a>
@@ -293,3 +307,10 @@ include_once "./php/MateriaAux.php";
 </script>
 </body>
 </html>
+
+<?php 
+}
+else{
+  header("location: ./Index.html");
+}
+?>

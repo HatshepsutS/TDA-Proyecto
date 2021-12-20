@@ -1,4 +1,5 @@
 <?php
+$ID_USUARIO = $_SESSION['ID_USUARIO'];
 $server='25.84.113.73';
 $user='root';
 $pass='=pEkL8AjixedeYAw6JA@';
@@ -6,6 +7,10 @@ $db='encuesta';
 $conexion=new mysqli($server,$user,$pass,$db);
 $pdo = new PDO('mysql:host=25.84.113.73; dbname=encuesta', $user, $pass);
 $respAx = [];
+$sqlNombre = "SELECT NOMBRE FROM usuario where ID_USUARIO = '$ID_USUARIO'";
+$checkNombre = mysqli_query($conexion, $sqlNombre);
+$registroNombre = mysqli_fetch_row($checkNombre);
+$nombreAdmin = $registroNombre[0];
 
 mysqli_set_charset($conexion, "utf8");
 $sql = "SELECT * FROM usuario";
@@ -14,7 +19,7 @@ $comentarios = mysqli_fetch_all($check);
 $numDatos = count($comentarios);
 $tu = 0;
 for($auxGlob = 1; $auxGlob<=5; $auxGlob++){
-    $sqlPreguntas = "SELECT * FROM encuesta WHERE ID_PREGUNTA = $auxGlob"; //Poner parámetro de por materia
+    $sqlPreguntas = "SELECT ID_MATERIA, ID_PREGUNTA, MUY_SATISFECHO, SATISFECHO, NO_ME_QUEJO, POCO_SATISFECHO, NADA_SATISFECHO FROM encuesta WHERE ID_PREGUNTA = $auxGlob"; //Poner parámetro de por materia
     $checkPreguntas = mysqli_query($conexion, $sqlPreguntas);
     $preguntas = mysqli_fetch_all($checkPreguntas);
     
