@@ -1,0 +1,448 @@
+:root{
+    --blanco:#ffff; 
+
+    
+}
+
+.fondo{
+    background-color: #1E1540;
+
+}
+
+.titulo1{
+    font-family: 'Raleway', sans-serif;
+    color: var(--blanco);
+    font-size: 2rem;
+}
+
+.titulo2{
+    font-family: 'Poppins', sans-serif;
+    color: var(--blanco);
+}
+
+.titulo3{
+    font-family: 'Raleway', sans-serif;
+    color: #000000;
+    font-size: 1.5rem;
+}
+.titulo4{
+
+    font-family: 'Raleway', sans-serif;
+    color: var(--blanco);
+    font-size: 1.3rem;
+}
+.titulo5{
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    color: #000000;
+    font-size: 1rem;
+
+}
+.titulo6{
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2rem;
+    color: var(--blanco);
+}
+.titulo7{
+    font-family: 'Raleway', sans-serif;
+    color: #000000;
+    font-size: 2rem;
+}
+.titulo8{
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #0771D3;
+
+}
+.rec1pequeño{
+    background-color: #C4C4C4;
+    border-radius: 22px;
+}
+
+.btn-lg{
+    border-radius: 133px;
+}
+.cuadro1{
+    background: rgba(23, 69, 138, 0.29);
+    width: 400px;
+    box-shadow: 0px 4px 65px rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
+
+}
+.cuadro2{
+    background: linear-gradient(180deg, rgba(71, 97, 147, 0.7) 0%, rgba(71, 97, 147, 0) 100%);
+    box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 50px;
+}
+.prendido{
+    font-family: 'Poppins', sans-serif;
+    color: var(--blanco);
+    font-size: 1.25rem;
+}
+
+.apagado{
+    font-family: 'Poppins', sans-serif;
+    color: rgba(177, 173, 193, 0.8);
+    font-size: 1.25rem;
+}
+
+.escom{
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 124.5%;
+    text-transform: capitalize;
+    color: var(--blanco);
+}
+.escom1{
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 124.5%;
+    text-transform: capitalize;
+    color: #1E1540;
+    
+}
+
+.dios{
+    background-image: url(./img/Fondo-adm.png);
+    width: 100%;
+    min-height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+.avemaria{
+    background-image: url(./img/avemaria.png);
+    width: 100%;
+    min-height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.lineagris{
+    background-color:  #C4C4C4;
+}
+
+.rectangulo1{
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+
+.rectangulo2{
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 66px;
+}
+
+.rectangulo3{
+    background: var(--blanco);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 66px;
+    
+}
+
+.rectanguloAzul{
+    background: #0771D3;
+    border-radius: 60px;
+}
+
+.texto-sombra{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    color: #000000;
+    font-size: .9rem;
+}
+
+.comentario{
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    color: #FFFFFF;
+    font-size: 1.5rem;
+
+}
+
+textarea{
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    height: 300px;
+    min-height: 200px;
+    max-width: 500px;
+    background: #C4C4C4;
+}
+.cuadroOscurito{
+    background-color: #c4c4c441;
+    border-radius: 66px;
+    height: 400px;
+}
+.lol{
+    height: 500px;
+    background: #e6e5e5;
+    border-radius: 10px;
+}
+.cuadroInvisible{
+    background-color: #c4c4c400;
+    border-radius: 66px;
+    height: 350px;
+}
+
+.bordeazul{
+    border: none;
+    border-bottom: 3px solid #0771D3;
+
+}
+
+.botonbuscar{
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+
+.tabs {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    -webkit-transform: translateY(5px);
+    transform: translateY(5px);
+  }
+  
+  .tabs > li {
+    transition-duration: .25s;
+    display: table-cell;
+    list-style: none;
+    text-align: center;
+    padding: 20px 20px 25px 20px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    color: grey;
+  }
+  
+  .tabs > li:before {
+    z-index: -1;
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 120%;
+    top: 0;
+    left: 0;
+    background-color: rgba(64, 155, 241, 0.289);
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+    transition-duration: .25s;
+    border-radius: 5px 5px 0 0;
+  }
+  
+  .tabs > li:hover:before {
+    -webkit-transform: translateY(70%);
+    transform: translateY(70%);
+  }
+  
+  .tabs > li.active { color: #0771D3; }
+  
+  .tabs > li.active:before { /* elelegido*/
+    transition-duration: .5s;
+    background-color: var(--blanco);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  
+  .tab__content { /* animación*/
+    background-color: var(--blanco);
+    position: relative;
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  .tab__content > li {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    list-style: none;
+  }
+  
+  .tab__content > li .content__wrapper { /*fondo*/
+    text-align: center;
+    border-radius: 5px;
+    width: 100%;
+    padding: 45px 40px 40px 40px;
+    background-color: var(--blanco);
+  }
+
+  :root{
+    --blanco:#ffff; 
+
+    
+}
+
+.fondo{
+    background-color: #1E1540;
+
+}
+
+.titulo1{
+    font-family: 'Raleway', sans-serif;
+    color: var(--blanco);
+    font-size: 2rem;
+}
+
+.titulo2{
+    font-family: 'Poppins', sans-serif;
+    color: var(--blanco);
+}
+
+.titulo3{
+    font-family: 'Raleway', sans-serif;
+    color: #000000;
+    font-size: 1.5rem;
+}
+.titulo4{
+
+    font-family: 'Raleway', sans-serif;
+    color: var(--blanco);
+    font-size: 1.3rem;
+}
+.titulo5{
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    color: #000000;
+    font-size: 1rem;
+
+}
+.titulo6{
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2rem;
+    color: var(--blanco);
+}
+.titulo7{
+    font-family: 'Raleway', sans-serif;
+    color: #000000;
+    font-size: 2rem;
+}
+
+.rec1pequeño{
+    background-color: #C4C4C4;
+    border-radius: 22px;
+}
+
+.btn-lg{
+    border-radius: 133px;
+}
+.cuadro1{
+    background: rgba(23, 69, 138, 0.29);
+    width: 400px;
+    box-shadow: 0px 4px 65px rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
+
+}
+.cuadro2{
+    background: linear-gradient(180deg, rgba(71, 97, 147, 0.7) 0%, rgba(71, 97, 147, 0) 100%);
+    box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 50px;
+}
+.prendido{
+    font-family: 'Poppins', sans-serif;
+    color: var(--blanco);
+    font-size: 1.25rem;
+}
+
+.apagado{
+    font-family: 'Poppins', sans-serif;
+    color: rgba(177, 173, 193, 0.8);
+    font-size: 1.25rem;
+}
+
+.escom{
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 124.5%;
+    text-transform: capitalize;
+    color: var(--blanco);
+}
+
+.dios{
+    background-image: url(./img/Fondo-adm.png);
+    width: 100%;
+    min-height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+.lineagris{
+    background-color:  #C4C4C4;
+}
+
+.rectangulo1{
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+
+.rectangulo2{
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 66px;
+}
+
+.rectanguloAzul{
+    background: #0771D3;
+    border-radius: 60px;
+}
+
+.texto-sombra{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    color: #000000;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: .9rem;
+}
+
+.comentario{
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    color: #FFFFFF;
+    font-size: 1.5rem;
+
+}
+
+.textarea{
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    height: 300px;
+    min-height: 200px;
+    max-width: 500px;
+    background: #C4C4C4;
+}
+.cuadroOscurito{
+    background-color: #c4c4c441;
+    border-radius: 66px;
+    height: 400px;
+}
+
