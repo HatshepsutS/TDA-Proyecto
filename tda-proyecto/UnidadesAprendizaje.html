@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/css/bootstrap.min.css">
+    <title>Prueba</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Raleway:wght@700&display=swap" rel="stylesheet">
+    <link href="./botonflot/dist/mfb.css" rel="stylesheet">
+    <script src="./botonflot/dist/mfb.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">   
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="fondo avemaria">
+  <section>
+    <div class="container-fluid">
+      <nav class="navbar navbar-dark">
+          <div class="container-fluid">
+              <a class="navbar-brand ml-md-auto" href="#">
+              <img src="./img2/logo-poli-blanco.png" alt="" width="30" height="40" class="d-inline-block align-text-top">
+              <img src="./img2/logoESCOMBlanco.png   " alt="" width="40" height="40" class="d-inline-block align-text-top">
+              <a href="https://www.escom.ipn.mx" class="nav-item nav-link ml-auto escom1">ESCOM</a>
+              </a>
+          </div>
+      </nav> 
+  </div> 
+  <header class=" row lineagris g-0 p-10 mb-2 ">
+      <div class="col-9 ">
+          <h1 class="titulo3 px-lg-4 pt-lg-2 pb-lg-">Encuesta a alumnos sobre la percepción de sus Clases Semestre 2021-2022</h1>
+      </div>
+  </header>
+  <div class=" px-lg-4 pt-lg ">
+    <div class="col-sm-12 text-center col-md-6">
+      <h1 class="titulo6 px-lg-5 mb-1"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-card-list" viewBox="0 0 16 16">
+        <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+        <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
+      </svg>   Unidades de Aprendizaje</h1>
+    </div>
+  </div>
+<main>
+
+
+  <div class="container-xl rectangulo2 px-lg-3 pt-lg-3 pb-lg-3 mb-3 ">
+    <div class="row mb-1"><br></div>
+    <div class="row text-center">
+      <div class="col-md-12  px-lg-5 pt-lg-2 pb-lg-3 ">
+      <form class="d-flex">
+        <input class="form-control me-2 bordeazul" type="search" placeholder="Buscar" aria-label="Search">
+        <button class="btn btn-primary botonbuscar" disabled data-bs-toggle="button" autocomplete="off" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-search " viewBox="0 0 16 16">
+          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+        </svg></button>
+      </form>
+      </div>
+    </div>
+    
+    
+    <div class="row text-center">
+      
+      <div class=" col-12 text-center align-self-center cuadroInvisible">
+        <table class="table">
+          <thead>
+            <tr class="titulo8">
+              <th scope="col">ID</th>
+              <th scope="col">Unidad de Aprendizaje</th>
+              <th scope="col">Ver reporte</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">ISC_TDAW</th>
+              <td>Tecnológias para el desarrollo del aplicaciones web</td>
+              <td><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+                <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+              </svg></td>
+            </tr>
+            <tr>
+              <th scope="row">ISC_SO</th>
+              <td>Sistemas operativos</td>
+              <td><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+                <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+              </svg></td>
+
+            </tr>
+            <tr>
+              <th scope="row">ISC_EA</th>
+              <td>Electrónica  Analógica</td>
+              <td><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+                <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+              </svg></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class = "row">
+        <div class = "container col-12 text-center">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                  <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">Siguiente</a>
+                  </li>
+                </ul>
+              </nav>
+        </div>
+</div>
+
+    </div>
+  </div>
+
+
+
+</main>
+
+
+
+</section>
+    <section> <!--Botón flotante-->>
+    <ul id="menu" class="mfb-component--br mfb-zoomin" data-mfb-toggle="hover">
+        <li class="mfb-component__wrap">
+          <a href="#" class="mfb-component__button--main">
+            <i class="mfb-component__main-icon--resting ion-plus-round"></i>
+            <i class="mfb-component__main-icon--active ion-close-round"></i>
+          </a>
+          <ul class="mfb-component__list">
+            <li>
+              <a href="#" data-mfb-label="Dashboard" class="mfb-component__button--child">
+                <i class="mfb-component__child-icon ion-speedometer"></i>
+              </a>
+            </li>
+            <li>
+              <a href="http://127.0.0.1:5500/tda-proyecto/Administrador.html" data-mfb-label="Salir" class="mfb-component__button--child">
+                <i class="bi bi-arrow-up-left-circle"></i>
+                <i class="mfb-component__child-icon ion-android-exit"></i>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+      <script src="css/js/bootstrap.bundle.min.js"></script> 
+</body>
+</html>

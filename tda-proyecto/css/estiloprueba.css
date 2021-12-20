@@ -1,1 +1,328 @@
 
+
+.section-1{
+    position: relative;
+
+    background: #1E1540;
+
+}
+.titulo1{
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    text-transform: capitalize;
+
+color: #FFFFFF;
+
+text-shadow: 0px 4px 4px rgba(0, 0,  0, 0.25)
+
+}
+.rec-1-atras{
+    position: absolute;
+    width: 353px;
+    height: 421px;
+    left: 80px;
+    top: 165px;
+    
+    background: rgba(23, 69, 138, 0.29);
+    box-shadow: 0px 4px 65px rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
+}
+.rec-2-adelante{
+    position: absolute;
+    width: 353px;
+    height: 383px;
+    left: 80px;
+    top: 206px;
+    
+    background: linear-gradient(180deg, rgba(71, 97, 147, 0.7) 0%, rgba(71, 97, 147, 0) 100%);
+    box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 50px;
+
+}
+
+.prendido{
+    position: absolute;
+    width: 133px;
+    height: 32px;
+    left: 115px;
+    top: 167px;
+
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 200%;
+    color: #FFFFFF;
+}
+
+.apagado{
+    position: absolute;
+    width: 143px;
+    height: 35px;
+    left: 230px;
+    top: 167px;
+
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 200%;
+
+    color: rgba(177, 173, 193, 0.8);
+}
+.estilo1{
+    position: absolute;
+    width: 207px;
+    height: 23px;
+    left: 148px;
+    top: 240px;
+    
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 595;
+    font-size: 20px;
+    line-height: 30px;
+    text-transform: capitalize;
+    
+    color: #C4C4C4;
+    
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+.estilo2{
+    position: absolute;
+    width: 207px;
+    height: 24px;
+    left: 148px;
+    top: 315px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    text-transform: capitalize;
+
+    color: #C4C4C4;
+}
+
+.barra1{
+    position: absolute;
+    width: 276px;
+    height: 26px;
+    left: 115px;
+    top: 270px;
+    
+    background: #C4C4C4;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 22px;
+}
+.barra2{
+    position: absolute;
+    width: 277px;
+    height: 25px;
+    left: 115px;
+    top: 345px;
+
+    background: #C4C4C4;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 22px;
+}
+
+.boton1{
+    position: absolute;
+    width: 152px;
+    height: 48px;
+    left: 178px;
+    top: 500px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 133px;
+
+}
+
+.btn-outline-danger{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+
+}
+
+.azul{
+    position: absolute;
+    width: 718px;
+    height: 625px;
+    left: 605px;
+    top: 0px;
+    z-index:-2 ;
+    background: #D2EFFF;
+}
+.img1{
+    left: 605px;
+    top: 100px;
+}
+.escom{
+    position: absolute;
+    width: 150px;
+    height: 45px;
+    left: 1150px;
+    top: 0px;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 124.5%;
+
+    text-transform: capitalize;
+
+    color: #1E1540;
+}
+.rec-chiquito{
+    position: absolute;
+    width: 44px;
+    height: 2px;
+    left: 145px;
+    top: 200px;
+
+    background: #0670D3;
+    border-radius: 15px;
+}
+.imagescom{
+    position: absolute;
+    width: 718px;
+    height: 350px;
+    left: 605px;
+    top: 190px;
+    background: url(./img/renderescom1.png);
+    z-index: 0;
+
+}
+.arbol1{
+    position: absolute;
+    width: 87.98px;
+    height: 160.22px;
+    left: 580px;
+    top: 409px;
+
+    background-image: url(./img/arbol1.svg);
+}
+
+.arbol2{
+    position: absolute;
+    width: 70px;
+    height: 127.48px;
+    left: 670px;
+    top: 427px;
+
+    background-image: url(./img/arbol2.svg);
+}
+.arbol3{
+    position: absolute;
+    width: 52.61px;
+    height: 123.67px;
+    left: 640.61px;
+    top: 393px;
+
+    background-image: url(./img/arbol3.svg);
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+.piso{
+    position: absolute;
+    width: 718px;
+    height: 66px;
+    left: 605px;
+    top: 523px;
+
+    background-image: url(./img/piso.png);
+    z-index: -1;
+}
+.diosito{
+    position: absolute;
+    width: 800px;
+    height: 70px;
+    left: 523px;
+    top: 555px;
+    
+    background-image: url(./img/dioooos.png);
+}
+
+.nube1{
+    position: absolute;
+    width: 150px;
+    height: 57px;
+    left: 725px;
+    top: 70px;
+
+
+    background-image: url(./img/nube1.svg);
+}
+.nube2{
+    position: absolute;
+    width: 156px;
+    height: 37px;
+    left: 1060px;
+    top: 100px;
+
+    background-image: url(./img/nube2.svg);
+}
+.icono1{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 120px;
+    top: 243px;
+    color: #C4C4C4;
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
+}
+
+.icono2{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 120px;
+    top: 317px;
+    color: #C4C4C4;
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.icono3{
+    width: 30px;
+    height: 30px;
+
+}
+.cesar{
+    position: relative;
+
+
+    
+    background: rgba(23, 69, 138, 0.29);
+    box-shadow: 0px 4px 65px rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
+}
+
+.ana{
+    position: relative;
+
+
+    
+    background: rgba(73, 0, 57, 0.29);
+    box-shadow: 0px 4px 65px rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
+}
+
+.botonji{
+    position: relative;
+    width: 152px;
+    height: 48px;
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 133px;
+
+}
