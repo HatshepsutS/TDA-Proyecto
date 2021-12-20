@@ -255,7 +255,7 @@ $ca=mysqli_num_rows($check2)*5;
         </a>
         <ul class="mfb-component__list">
           <li>
-            <a href="./Index.html" data-mfb-label="Salir" class="mfb-component__button--child">
+            <a href="./cerrarSesion.php" data-mfb-label="Salir" class="mfb-component__button--child">
               <i class="bi bi-arrow-up-left-circle"></i>
               <i class="mfb-component__child-icon ion-android-exit"></i>
             </a>
@@ -308,7 +308,7 @@ else  {
                         confirmButtonText: 'Continuar',
                         timer:3000,
                         didDestroy:()=>{
-                        window.location.href = "./DespedidaUsuario.html";
+                        window.location.href = "./DespedidaUsuario.php";
                       }
                       })
 
