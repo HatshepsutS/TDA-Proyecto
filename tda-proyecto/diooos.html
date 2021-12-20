@@ -9,13 +9,15 @@
   <link rel="stylesheet" href="./css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/path/to/fontawesome/css/all.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Raleway:wght@700&display=swap" rel="stylesheet">
   <script src="./js/jquery-3.6.0.min.js"></script>
   <script src="./Validetta/validetta.min.js"></script>
 <script src="./Validetta/localization/validettaLang-es-ES.js"></script>
 <link href="./js/SweetAlert/sweetalert2.css" rel="stylesheet">
 <script src = "./js/SweetAlert/sweetalert2.all.min.js"></script>
-
+<link href="/image-puzzle-slider-captcha/src/disk/slidercaptcha.min.css" rel="stylesheet" />
+<script src="/image-puzzle-slider-captcha/src/disk/longbow.slidercaptcha.min.js"></script>
 </head>
 
 <body class="fondo">
@@ -51,7 +53,17 @@
               <input type="password" class="form-control rec1pequeño border-0" placeholder="Ingrese su contraseña" id="Contrasena" name="Contrasena" data-validetta="required,minLength[5],maxLength[15]" maxlength="15">
             </div>
             <div>
+              <div class="slidercaptcha card">
+                <div class="card-header">
+                  <span>Drag To Verify</span>
+                </div>
+                <div class="card-body">
+                  <div id="captcha"></div>
+                </div>
+              </div>
               
+
+            
             </div>
 
 
@@ -157,7 +169,29 @@ $(document).ready(()=>{
       </div>
     </div>
   </section>
-  <script src="css/js/bootstrap.bundle.min.js"></script>
+  <script src="css/js/bootstrap.bundle.min.js"> </script>
+  <script>
+    var captcha = sliderCaptcha({
+                id: 'captcha',
+                onSuccess: function () {
+                  // do something
+                }
+            });
+    var captcha = sliderCaptcha({
+              id: 'captcha',
+              onSuccess: function () {
+                // do something
+              },
+              setSrc: function () {
+                return 'http://imgs.blazor.zone/images/Pic' + Math.round(Math.random() * 136) + '.jpg';
+              },
+              // or use local images instead
+              localImages: function () {
+                return 'images/Pic' + Math.round(Math.random() * 4) + '.jpg';
+              }
+          });
+  </script>
+ 
 
  
 
