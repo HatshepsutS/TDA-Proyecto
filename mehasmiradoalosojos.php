@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -9,32 +9,41 @@
   <link rel="stylesheet" href="./css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/path/to/fontawesome/css/all.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Raleway:wght@700&display=swap" rel="stylesheet">
   <script src="./js/jquery-3.6.0.min.js"></script>
   <script src="./Validetta/validetta.min.js"></script>
 <script src="./Validetta/localization/validettaLang-es-ES.js"></script>
 <link href="./js/SweetAlert/sweetalert2.css" rel="stylesheet">
 <script src = "./js/SweetAlert/sweetalert2.all.min.js"></script>
-<link rel="stylesheet" href="MotionCAPTCHA/MotionCAPTCHA/jquery.motionCaptcha.0.2.css"/>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<?php
+  if(isset($_POST['submit'])){
+    echo "matenmeeeeeee";
+
+
+  }
+
+ 
+ ?>
+
 
 </head>
 
 <body class="fondo">
   <section>
     <div class="row g-0">
-      <div class="col-lg-6 ">
-        <div class="px-lg-4 pt-lg-2 pb-lg-2 ">
+      <div class="col-lg-6 " method="post">
+        <div class="px-lg-3 pt-lg-2 pb-lg-3 ">
           <img src="./img2/ipn1.png" alt="img-fluid">
           <img src="./img2/logoEscom2.png" alt="img-fluid">
         </div>
-        <div class="px-lg-4 py-lg-0 p-0 order-2 order-sm-2 order-md-1">
-          <h1 class="titulo4 mb-2">Encuesta a alumnos sobre la percepción de sus Clases Semestre 2021-2022 </h1>
+        <div class="px-lg-3 py-lg-2 p-4 order-2 order-sm-2 order-md-1">
+          <h1 class="titulo1 mb-4">Encuesta a alumnos sobre la percepción de sus Clases Semestre 2021-2022 </h1>
           <div class="row cuadro1 offset-sm-2 justify-content-center align-items-center ">
-            <div class="col text-center">
-              <h1 class="form-text prendido">Ingresar datos</h1>
+            <div class="col-6 text-center">
+              <h1 class="form-text prendido">Ingrese datos</h1>
             </div>
-          <form class="cuadro2 p-3"  id="formLogin" name="formLogin" method="POST">
+          <form class="cuadro2 p-4"  id="formLogin" name="formLogin" method="POST">
             <div class="mb-3 ">
               <label for="exampleInputEmail1" class="form-label titulo2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" fill="currentColor" class="bi bi-person-circle p-1" viewBox="0 0 16 16">
@@ -52,24 +61,11 @@
                 Contraseña</label>
               <input type="password" class="form-control rec1pequeño border-0" placeholder="Ingrese su contraseña" id="Contrasena" name="Contrasena" data-validetta="required,minLength[5],maxLength[15]" maxlength="15">
             </div>
-            
-            <div>
-			<form action="#" method="post" id="mc-form">
-			
-				<div class="text-center" id="mc">
-					<p class="titulo2">Por favor, dibuja la siguiente figura</p>
-					<canvas id="mc-canvas">
-						Your browser doesn't support the canvas element - please visit in a modern browser.
-					</canvas>
-					<input type="hidden" id="mc-action" value="http://josscrowcroft.com/projects/motioncaptcha-jquery-plugin/" />
-				</div>
-              
+            <div class="row">
+                <div class="g-recaptcha" data-sitekey="6LfnnrYdAAAAAMPKry3Nf6-CiIuXGAVGEg5b2svd"></div>
             </div>
-    
-
-
             <div class="text-center">
-              <button type="submit" class="btn btn-lg btn-primary" id="login_submit" name="login_submit">
+              <button type="submit" class="btn btn-lg btn-primary"  id="login_submit" name="login_submit">
                 <script>
 
 $(document).ready(()=>{
@@ -154,7 +150,7 @@ $(document).ready(()=>{
           </form>
         </div>
         </div>
-     </form>
+
       </div>
       <div class="col-lg-6 order-1 order-sm-1 order-md-2">
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
@@ -169,69 +165,9 @@ $(document).ready(()=>{
       </div>
     </div>
   </section>
-  <script src="css/js/bootstrap.bundle.min.js"> </script>
-  <script>
-    const captcha = new Captcha($('#canvas'));
-    $('#valid').on('click', function() {
-  const ans = captcha.valid($('input[name="code"]').val());
-  console.log(ans);
-  })
-  const captcha = new Captcha($('#canvas'),{
-      length: 6
-  });
-  const captcha = new Captcha($('#canvas'),{
-      autoRefresh: false
-});
-const captcha = new Captcha($('#canvas'),{
-      caseSensitive: true
-});
-const captcha = new Captcha($('#canvas'),{
-      width: 100,
-      height: 40,
-      font: 'bold 23px Arial',
-      resourceType: 'aA0', // a-lowercase letters, A-uppercase letter, 0-numbers
-      resourceExtra: [],
-      clickRefresh: true,
-});
-  </script>
+  <script src="css/js/bootstrap.bundle.min.js"></script>
 
  
-
-
-<body>
-	<div id="wrap">
-		<div id="page">
-
-			<form action="#" method="post" id="mc-form">
-			
-				<div id="mc">
-					<input type="hidden" id="mc-action" value="http://josscrowcroft.com/projects/motioncaptcha-jquery-plugin/" />
-				</div>
-			</form>
-			
-	</div>
-	
-	<!-- Get them jqueries: -->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
-	
-	<!-- HTML5 Placeholder fallback: -->
-	<script src="MotionCAPTCHA/js/jquery.placeholder.1.1.1.min.js" type="text/javascript"></script>
-
-	
-	<!-- MotionCAPTCHA: -->
-	<script src="MotionCAPTCHA/MotionCAPTCHA/jquery.motionCaptcha.0.2.js" ></script>
-	<script type="text/javascript">
-		jQuery(document).ready(function($) {
-			
-			// Do the biznizz:
-			$('#mc-form').motionCaptcha({
-				shapes: ['triangle', 'x', 'rectangle', 'circle', 'check', 'zigzag', 'arrow', 'delete', 'pigtail', 'star']
-			});
-			
-			// Yep:
-			$("input.placeholder").placeholder();
-		});
-	</script>
 
 </body>
 </html>
