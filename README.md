@@ -1,6 +1,5 @@
-
+TDA-Proyecto. Página para la recolección de encuestas sobre la satisfacción escolar en ESCOM. 
 Realizado por:
-Tenis
-
-jijijijij
-jajajaj
+-Daniela Montserrat Enriquez Ballesteros.
+-López De la Concha Cesar Alfonso. 
+-Naomi Youshimatz Navarro
